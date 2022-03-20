@@ -24,6 +24,18 @@ app.get('/api/divesites', async(req, res, next) => {
     }
 });
 
+app.delete('/api/divers/:id', async(req, res, next) => {
+    try {
+        const diver = await Diver.findByPk(req.params.id);
+        await diver.destroy();
+        res.sendStatus(204);
+    }
+    catch(err) {
+        next(err);
+    }
+});
+
+
 const setup = async() => {
     try {
         await syncAndSeed();
