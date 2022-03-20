@@ -26,6 +26,10 @@ const DiveSite = sequelize.define('diveSite', {
     }
 });
 
+Diver.generateRandom = function() {
+    return this.create({ name: `New Diver ${Math.floor(Math.random() * 99)}` })
+};
+
 const syncAndSeed = async() => {
     await sequelize.sync({ force: true });
 

@@ -5,7 +5,7 @@ const NavBar = (props) => {
     const { divers, divesites } = props
 
     return (
-        <div>
+        <div id='nav'>
             <a> Divers ({ divers.length }) </a>
             <a> Dive Sites ({ divesites.length }) </a>
         </div>

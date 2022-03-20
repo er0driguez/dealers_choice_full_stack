@@ -1,11 +1,12 @@
 import React from 'react';
 import { render } from 'react-dom';
-import store, { loadDivers, loadDivesites } from './store'
+import store, { loadDivers, loadDivesites, createDiver } from './store'
 import { Provider, connect } from 'react-redux';
 import NavBar from './NavBar';
 import Divers from './Divers';
 import DiveSites from './DiveSites';
-import axios from 'axios'
+import Create from './Create';
+import axios from 'axios';
 
 const App = connect(
     null, 
@@ -27,8 +28,15 @@ const App = connect(
                 <div id="body">
                     <h1> Gotham Dive Club </h1>
                     <NavBar />
-                    <Divers />
-                    <DiveSites />
+                    <Create />
+                    <div id='members'>
+                        Club Members
+                        <Divers />
+                    </div>
+                    <div id='itinerary'>
+                        Diving Itinerary 2022
+                        <DiveSites />
+                    </div>
                 </div>
             )
         }

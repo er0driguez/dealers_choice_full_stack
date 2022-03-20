@@ -4,6 +4,7 @@ const path = require('path');
 const { syncAndSeed, Diver, DiveSite } = require('./db/index');
 
 app.use('/dist', express.static(path.join(__dirname, 'dist')));
+app.use('/', express.static(path.join(__dirname, 'public')));
 app.get('/', (req, res)=> res.sendFile(path.join(__dirname, 'index.html')));
 
 app.get('/api/divers', async(req, res, next) => {
@@ -29,6 +30,15 @@ app.delete('/api/divers/:id', async(req, res, next) => {
         const diver = await Diver.findByPk(req.params.id);
         await diver.destroy();
         res.sendStatus(204);
+    }
+    catch(err) {
+        next(err);
+    }
+});
+
+app.post('/api/divers', async(req, res, next) => {
+    try {
+        res.status(201).send(await Diver.generateRandom());
     }
     catch(err) {
         next(err);

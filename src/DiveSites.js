@@ -10,7 +10,7 @@ const DiveSites = (props) => {
             divesites.map( (divesite) => {
                 return (
                     <li key={divesite.id}>
-                        {divesite.name} {divesite.location}
+                        {divesite.name} Location: {divesite.location}
                     </li>
                 )
             })

@@ -3,6 +3,7 @@ import axios from 'axios'
 const LOAD_DIVERS = 'LOAD_DIVERS'
 const LOAD_DIVESITES = 'LOAD_DIVESITES'
 const DELETE_DIVER = 'DELETE_DIVER'
+const CREATE_DIVER = 'CREATE_DIVER'
 import thunk from 'redux-thunk'
 
 const divers = (state = [], action) => {
@@ -10,10 +11,13 @@ const divers = (state = [], action) => {
     if (action.type === LOAD_DIVERS){
         return action.divers;
     }
+    if (action.type === CREATE_DIVER) {
+        return [...state, action.diver];
+    }
     if (action.type === DELETE_DIVER) {
         return state.filter( diver => diver.id !== action.diver.id)
     }
-    return state
+    return state;
 }
 
 const divesites = (state = [], action) => {
@@ -46,5 +50,12 @@ const loadDivesites = () => {
     }
 };
 
-export { loadDivers, loadDivesites };
+const createDiver = () => {
+    return async(dispatch) => {
+        const response = await axios.post('/api/divers');
+        dispatch({ type: CREATE_DIVER, diver: response.data });
+    }
+};
+
+export { loadDivers, loadDivesites, createDiver };
 export default store;
