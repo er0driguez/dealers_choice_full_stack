@@ -1,13 +1,14 @@
 import React from 'react';
 import { connect } from 'react-redux';
+import { Link } from 'react-router-dom'
 
 const NavBar = (props) => {
     const { divers, divesites } = props
 
     return (
         <div id='nav'>
-            <a> Divers ({ divers.length }) </a>
-            <a> Dive Sites ({ divesites.length }) </a>
+            <Link to="/divers"> Divers ({ divers.length }) </Link>
+            <Link to="/divesites"> Dive Sites ({ divesites.length }) </Link>
         </div>
     )
 };

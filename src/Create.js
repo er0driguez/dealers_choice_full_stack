@@ -4,7 +4,7 @@ import { createDiver } from './store'
 
 const CreateDiver = ({ create }) => {
     return (
-        <div>
+        <div id='create'>
             <button onClick={ create }> Add Diver </button>
         </div>
     )

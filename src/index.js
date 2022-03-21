@@ -2,11 +2,11 @@ import React from 'react';
 import { render } from 'react-dom';
 import store, { loadDivers, loadDivesites, createDiver } from './store'
 import { Provider, connect } from 'react-redux';
+import { HashRouter, Route, Link } from 'react-router-dom';
 import NavBar from './NavBar';
 import Divers from './Divers';
 import DiveSites from './DiveSites';
 import Create from './Create';
-import axios from 'axios';
 
 const App = connect(
     null, 
@@ -28,6 +28,8 @@ const App = connect(
                 <div id="body">
                     <h1> Gotham Dive Club </h1>
                     <NavBar />
+                    <Route path="/divers" component={Divers}/>
+                    <Route path="/divesites" component={DiveSites}/>
                     <Create />
                     <div id='members'>
                         Club Members
@@ -44,5 +46,7 @@ const App = connect(
 )
 
 render(<Provider store={store}>
-        <App />
+        <HashRouter>
+            <App />
+        </HashRouter>
     </Provider>, document.querySelector('#root'));
