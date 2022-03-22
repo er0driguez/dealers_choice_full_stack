@@ -7,7 +7,6 @@ const CREATE_DIVER = 'CREATE_DIVER'
 import thunk from 'redux-thunk'
 
 const divers = (state = [], action) => {
-    console.log(action)
     if (action.type === LOAD_DIVERS){
         return action.divers;
     }
@@ -50,9 +49,9 @@ const loadDivesites = () => {
     }
 };
 
-const createDiver = () => {
+const createDiver = (name) => {
     return async(dispatch) => {
-        const response = await axios.post('/api/divers');
+        const response = await axios.post('/api/divers', { name });
         dispatch({ type: CREATE_DIVER, diver: response.data });
     }
 };

@@ -7,7 +7,7 @@ const Diver = sequelize.define('diver', {
         allowNull: false
     },
     certificationLevel: {
-        type: Sequelize.ENUM("Open Water", "Advanced Open Water", "Rescue", "Divemaster"),
+        type: Sequelize.ENUM("Open Water", "Advanced Open Water", "Divemaster"),
         defaultValue: "Open Water"
     }
 });

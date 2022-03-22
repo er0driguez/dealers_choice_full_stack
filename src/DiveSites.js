@@ -1,5 +1,6 @@
 import React from 'react';
 import { connect } from 'react-redux';
+import {Link, Route } from 'react-router-dom';
 
 const DiveSites = (props) => {
     const { divesites } = props
@@ -10,7 +11,7 @@ const DiveSites = (props) => {
             divesites.map( (divesite) => {
                 return (
                     <li key={divesite.id}>
-                        {divesite.name} Location: {divesite.location}
+                        <Link to={`/divesites/${divesite.id}`}>{divesite.name}</Link> Location: {divesite.location}
                     </li>
                 )
             })
