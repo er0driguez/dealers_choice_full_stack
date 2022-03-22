@@ -43,13 +43,13 @@ const App = connect(
                 <div id="body">
                     <h1> Gotham Dive Club </h1>
                     <div id="club-line">
-                        NYC's Favorite Diving Club For All Certification Levels
+                        NYC's Favorite Scuba Diving Club For All Diving Levels
                     </div>
                     <NavBar />
                     
                         <Route path="/divers" component={Divers}/>
                         <Route path='/divesites/:id' component={ Detail } />
-                        <Route path="/divesites" component={DiveSites}/>
+                        <Route exact path="/divesites" component={DiveSites}/>
                 </div>
             )
         }
