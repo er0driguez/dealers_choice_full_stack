@@ -7,13 +7,14 @@ const DiveSites = (props) => {
 
     return (
         <div id="itinerary">
-            Diving Itinerary 2022
+            <div id="itin-title">Diving Itinerary 2022</div>
             <ul>
             {
             divesites.map( (divesite) => {
                 return (
-                    <li key={divesite.id}>
-                        <Link to={`/divesites/${divesite.id}`}>{divesite.name}</Link> Location: {divesite.location}
+                    <li key={divesite.id} id="dive-site">
+                        <Link to={`/divesites/${divesite.id}`}>{divesite.name}</Link> 
+                        <div>Location: {divesite.location}</div>
                     </li>
                 );
             })

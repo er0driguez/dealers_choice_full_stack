@@ -13,7 +13,6 @@ class CreateDiver extends React.Component{
         const { name } = this.state;
         return (
             <form onSubmit={(ev) => {
-                console.log(ev);
                 ev.preventDefault();
                 this.props.create(this.state.name)
             }}>

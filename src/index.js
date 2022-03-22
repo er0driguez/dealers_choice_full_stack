@@ -17,7 +17,10 @@ const Detail = connect(state => state)(
         return (
             <div>
                 <h1 id="site-name"> { divesite.name }</h1>
-                <div id="site-details"> Details About Divesite </div>
+                <div id="site-cert"> 
+                    Recommended Certification: { divesite.diverTypeAllowed }
+                </div>
+                <div id="site-details"> { divesite.description } </div>
             </div>
         );
     }

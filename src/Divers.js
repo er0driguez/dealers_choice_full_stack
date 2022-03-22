@@ -15,14 +15,14 @@ const Divers = (props) => {
 
     return (
         <div id="members">
-            Club Members
+            <div id="members-title">Club Members</div>
             <Create />
 
-            <ul id="divers">
+            <ul id="diver-list">
             {
                 divers.map( (diver) => {
                     return (
-                        <li key={diver.id}>
+                        <li key={diver.id} id="diver">
                             { diver.name } <button onClick={ () => deleteDiver(diver)}> X </button>
                             <p> Certification Level: { diver.certificationLevel } </p>
                         </li>

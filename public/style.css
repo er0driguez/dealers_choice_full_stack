@@ -7,7 +7,7 @@ body {
     justify-content: space-around;
     margin: 1em;
     font-size: 20;
-
+    padding: 1em;
 }
 
 h1 {
@@ -28,6 +28,7 @@ h1 {
 #site-details {
     text-align: center;
     font-size: large;
+    margin: 1em;
 }
 
 #club-line {
@@ -35,9 +36,27 @@ h1 {
     font-weight: bold;
     font-size: 22;
 }
+#site-cert {
+    text-align: center;
+}
+#dive-site {
+    margin: 1em;
+    text-decoration: none;
+    text-align: center;
+}
+#diver {
+    margin: 2em;
+}
+#members-title {
+    font-size: 24;
+    font-weight: bold;
+}
 
-/* #divers {
-    display: flex;
-
-    border: solid 1px black;
-} */
+#itin-title {
+    font-size: 24;
+    font-weight: bold;
+    text-align: center;
+}
+ul {
+    list-style: none;
+}
