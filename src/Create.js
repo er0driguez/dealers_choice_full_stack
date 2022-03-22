@@ -23,7 +23,7 @@ class CreateDiver extends React.Component{
                 name='name'
                 onChange={ ev => this.setState({ name: ev.target.value })}
                 />
-                <button type="submit" disabled={ !name }> 
+                <button id="createButton" type="submit" disabled={ !name }> 
                     Add Diver 
                 </button>
             </form>

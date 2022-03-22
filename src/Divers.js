@@ -2,6 +2,8 @@ import React from 'react';
 import { connect } from 'react-redux';
 import axios from 'axios';
 import store from './store'
+import Create from './Create';
+
 
 const deleteDiver = async (diver) => {
     await axios.delete(`/api/divers/${diver.id}`)
@@ -12,7 +14,11 @@ const Divers = (props) => {
     const { divers } = props
 
     return (
-        <ul id="divers">
+        <div id="members">
+            Club Members
+            <Create />
+
+            <ul id="divers">
             {
                 divers.map( (diver) => {
                     return (
@@ -23,7 +29,9 @@ const Divers = (props) => {
                     )
                 })
             }
-        </ul>
+            </ul>
+        </div>
+        
     )
 }
 

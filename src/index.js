@@ -16,8 +16,8 @@ const Detail = connect(state => state)(
         }
         return (
             <div>
-                <h1> { divesite.name }</h1>
-                <div> Details About Divesite </div>
+                <h1 id="site-name"> { divesite.name }</h1>
+                <div id="site-details"> Details About Divesite </div>
             </div>
         );
     }
@@ -42,17 +42,14 @@ const App = connect(
             return (
                 <div id="body">
                     <h1> Gotham Dive Club </h1>
-                    <NavBar />
-                    <Create />
-                    <div id='members'>
-                        Club Members
-                        <Route path="/divers" component={Divers}/>
+                    <div id="club-line">
+                        NYC's Favorite Diving Club For All Certification Levels
                     </div>
-                    <div id='itinerary'>
-                        Diving Itinerary 2022
+                    <NavBar />
+                    
+                        <Route path="/divers" component={Divers}/>
                         <Route path='/divesites/:id' component={ Detail } />
                         <Route path="/divesites" component={DiveSites}/>
-                    </div>
                 </div>
             )
         }

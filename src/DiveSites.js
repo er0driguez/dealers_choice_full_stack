@@ -6,17 +6,21 @@ const DiveSites = (props) => {
     const { divesites } = props
 
     return (
-        <ul>
+        <div id="itinerary">
+            Diving Itinerary 2022
+            <ul>
             {
             divesites.map( (divesite) => {
                 return (
                     <li key={divesite.id}>
                         <Link to={`/divesites/${divesite.id}`}>{divesite.name}</Link> Location: {divesite.location}
                     </li>
-                )
+                );
             })
-        }
-        </ul>
+            }
+            </ul>
+        </div>
+        
     )
 }
 
